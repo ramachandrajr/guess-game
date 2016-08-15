@@ -1,0 +1,84 @@
+/*color pallete
+	yello: #DFC621;
+	red: #BC2C21;
+	green: #34C62F;
+	blue: #433F8B;
+	viol: #7B2BC3;
+*/
+
+body {
+	background: #FFF;
+	font-family: 'Roboto', sans-serif;
+	height: 100%;
+}
+
+#minion-chat {
+	text-align: center;
+}
+
+.minion-alert {
+	width: 70%;
+	margin: 20px auto;
+}
+
+.minion-says {
+	display: inline-flex;
+}
+
+.jumbotron {
+	background: url("https://hd.unsplash.com/photo-1468476775582-6bede20f356f");
+	background-size: cover;
+	height: 500px;
+}
+
+.popover-example,
+.popover {	
+	display: block;
+}
+
+.popover-content {
+	padding: 5%;
+}
+
+.minion-bla {	
+	margin-left: 20px;
+}
+
+.minion-pic {
+	width: 40%;
+	margin-top: 15%;
+}
+
+.user-enter {
+	margin-top: 25%;
+}
+
+.btn {
+	border-radius: 0px;
+}
+
+.row {
+	margin: 5%;
+}
+
+#head {
+	color: #fff;
+	font-size: 32px;	
+	text-align: center;
+}
+
+@media (min-width: 1176px) {
+
+}
+
+#replay,
+#stop {
+	width: 150px;
+	margin: 3%;
+}
+
+.buttons {
+	padding-left: 10%;
+}
+
+

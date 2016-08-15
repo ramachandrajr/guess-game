@@ -1,37 +1,39 @@
-// Create secret number.
+// Create secret number
 var secretNumber = Math.floor(Math.random() * 100);
-rightAnswer = false;
-// Iterate until the right answer is true
-while (rightAnswer === false) {
+console.log(secretNumber);
 
-	// Ask user to guess.
-	var guess = prompt("Guess a number");
-	var guessNum = Number(guess);
+var times = 0;
 
-
-	// Check if guess is right.
-	if (guessNum === secretNumber) {
-		alert("YOU GOT IT RIGHT");
-		rightAnswer = true;
+// Get answer from the input when button is 
+function submitAnswer () {
+	times++;
+	var input = document.getElementById("number");
+	var guess = Number(input.value);
+	var chat = document.getElementById("mini-says");
+	
+	if (guess === secretNumber) {
+		chat.innerHTML = "Bob: You got it! Bananaaaaaa";
+		// Disable the submit button.
+		document.getElementById("hitIt").className += " disabled";
 	}
-	// Otherwise, check if higher
-	else if (guessNum > secretNumber) {
-		alert("Too high. Guess again.");
-		rightAnswer = false;
+	else if (guess < secretNumber) {
+		chat.innerHTML = "Bob: Well thats a bit low boss! Keep Tryin.";
 	}
-	// Otherwise, check if lower
-	else if (guessNum < secretNumber) {
-		alert("Too less. Guess again.");
-		rightAnswer = false;
-	}
-	// If user wants to exit.
-	else if (guess === "x") {
-		alert("Thanks for playin.");
-		rightAnswer = true;
+	else if (guess > secretNumber) {
+		chat.innerHTML = "Bob: Well thats a bit high!! Keep Tryin.";
 	}
 	else {
-		alert("You can only use numbers");
-		rightAnswer = false;
+		chat.innerHTML = "Bob: I guess you should use a number.";
 	}
+}
 
+function reloadGame(){
+	location.reload();
+	submitAnswer();
+}
+
+function giveUp() {
+	var chat = document.getElementById("mini-says");
+	chat.innerHTML = "Bob: The number is " + secretNumber;
+	location.reload();
 }
